@@ -39,32 +39,32 @@ namespace Vueling.Infrastruture.Repository.Repository
             }
             catch (DbUpdateConcurrencyException ex)
             {
-                //You Must LOG
+                VuelingLogger.Logger(ex);
                 throw new VuelingException(Resources.DbUpdateConcurrencyException, ex);
             }
             catch (DbUpdateException ex)
             {
-                //You Must LOG
+                VuelingLogger.Logger(ex);
                 throw new VuelingException(Resources.DbUpdateException, ex);
             }
             catch (DbEntityValidationException ex)
             {
-                //You Must LOG
+                VuelingLogger.Logger(ex);
                 throw new VuelingException(Resources.DbEntityValidationException, ex);
             }
             catch (NotSupportedException ex)
             {
-                //You Must LOG
+                VuelingLogger.Logger(ex);
                 throw new VuelingException(Resources.NotSupportedException, ex);
             }
             catch (ObjectDisposedException ex)
             {
-                //You Must LOG
+                VuelingLogger.Logger(ex);
                 throw new VuelingException(Resources.ObjectDisposedException, ex);
             }
             catch (InvalidOperationException ex)
             {
-                //You Must LOG
+                VuelingLogger.Logger(ex);
                 throw new VuelingException(Resources.InvalidOperationException, ex);
             }
             return model;
@@ -74,20 +74,11 @@ namespace Vueling.Infrastruture.Repository.Repository
         {
             List<PolizasEntity> polizasEntity;
             IQueryable<Polizas> listaPolizas;
+            
 
-            try
-            {
                 listaPolizas = db.Polizas;
-            }
-            catch (Exception ex)
-
-            {
-                //You Must LOG
-                throw ex;
-            }
-
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<Clientes, ClientesEntity>());
-            IMapper iMapper = config.CreateMapper();
+            
+            IMapper iMapper = RepositoryConfigAutomapper.configLeer.CreateMapper();
 
             polizasEntity = iMapper.Map<List<PolizasEntity>>(listaPolizas);
 
@@ -95,16 +86,6 @@ namespace Vueling.Infrastruture.Repository.Repository
         }
 
         public PolizasEntity GetById(int Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int Remove(int Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public PolizasEntity Update(PolizasEntity model)
         {
             throw new NotImplementedException();
         }

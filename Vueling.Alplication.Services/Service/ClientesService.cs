@@ -16,19 +16,7 @@ namespace Vueling.Alplication.Services.Service
     public class ClientesService : IClientesService<ClientesDto>
     {
         private readonly IRepositoryClientes<ClientesEntity> clienteRepository;
-
-        static MapperConfiguration configEscribir;
-
-        static MapperConfiguration configLeer;
-
-        static ClientesService()
-        {
-            configEscribir = new MapperConfiguration(cfg => cfg.CreateMap<ClientesDto, ClientesEntity>());;
-
-            configLeer = new MapperConfiguration(cfg => cfg.CreateMap<ClientesDto, ClientesEntity>()
-            .ForMember(dest => dest.id, sou => sou.Ignore())
-            .ForMember(dest => dest.role, sou => sou.Ignore()));
-        }
+        
         public ClientesService() : this(new ClienteRepository())
         {
         }
@@ -42,7 +30,7 @@ namespace Vueling.Alplication.Services.Service
         public ClientesDto Add(ClientesDto model)
         {
             ClientesEntity clienteEntity = null;
-            IMapper iMapper = configEscribir.CreateMapper();
+            IMapper iMapper = ServiceConfigAutomapper.configEscribir.CreateMapper();
 
             clienteEntity = iMapper.Map<ClientesDto, ClientesEntity>(model);
 
@@ -50,7 +38,7 @@ namespace Vueling.Alplication.Services.Service
             {
                 clienteRepository.Add(clienteEntity);
             }
-            catch (Exception ex)
+            catch (VuelingException ex)
             {
                 throw ex;
             }
@@ -62,7 +50,7 @@ namespace Vueling.Alplication.Services.Service
             List<ClientesDto> listaClientesDtos;
             List<ClientesEntity> listaClientesRepositoryEntry;
             listaClientesRepositoryEntry = clienteRepository.GetAll();
-            IMapper iMapper = configLeer.CreateMapper();
+            IMapper iMapper = ServiceConfigAutomapper.configLeer.CreateMapper();
 
             listaClientesDtos = iMapper.Map<List<ClientesDto>>(listaClientesRepositoryEntry);
             return listaClientesDtos;
@@ -73,7 +61,7 @@ namespace Vueling.Alplication.Services.Service
             ClientesDto cliente;
             ClientesEntity clientesEntityEntry;
             clientesEntityEntry = clienteRepository.GetById(Id);
-            IMapper iMapper = configLeer.CreateMapper();
+            IMapper iMapper = ServiceConfigAutomapper.configLeer.CreateMapper();
             cliente = iMapper.Map<ClientesDto>(clientesEntityEntry);
             return cliente;
         }
@@ -82,7 +70,7 @@ namespace Vueling.Alplication.Services.Service
             List<ClientesDto> cliente;
             List<ClientesEntity> clientesEntityEntry;
             clientesEntityEntry = clienteRepository.GetByName(name);
-            IMapper iMapper = configLeer.CreateMapper();
+            IMapper iMapper = ServiceConfigAutomapper.configLeer.CreateMapper();
             cliente = iMapper.Map<List<ClientesDto>>(clientesEntityEntry);
             return cliente;
         }

@@ -25,27 +25,11 @@ namespace Vueling.Alplication.Services.Service
         {
             this.polizaRepository = polizaRepository;
         }
-
-        static MapperConfiguration configEscribir;
-
-        static MapperConfiguration configLeer;
-
-        static PolizasService()
-        {
-            configEscribir = new MapperConfiguration(cfg => cfg.CreateMap<PolizasDto, PolizasEntity>());;
-
-            configLeer = new MapperConfiguration(cfg => cfg.CreateMap<PolizasDto, PolizasEntity>()
-            .ForMember(dest => dest.id, sou => sou.Ignore())
-            .ForMember(dest => dest.inceptionDate, sou => sou.Ignore())
-            .ForMember(dest => dest.installmentPayment, sou => sou.Ignore()));
-        }
-       
-
         
         public PolizasDto Add(PolizasDto model)
         {
             PolizasEntity polizaEntity = null;
-            IMapper iMapper = configEscribir.CreateMapper();
+            IMapper iMapper = ServiceConfigAutomapper.configEscribir.CreateMapper();
 
             polizaEntity = iMapper.Map<PolizasDto, PolizasEntity>(model);
 
@@ -54,7 +38,7 @@ namespace Vueling.Alplication.Services.Service
                 polizaRepository.Add(polizaEntity);
 
             }
-            catch (Exception ex)
+            catch (VuelingException ex)
             {
                 throw ex;
             }
@@ -66,23 +50,13 @@ namespace Vueling.Alplication.Services.Service
             List<PolizasDto> listaPolizasDtos;
             List<PolizasEntity> listaClientesRepositoryEntry;
             listaClientesRepositoryEntry = polizaRepository.GetAll();
-            IMapper iMapper = configLeer.CreateMapper();
+            IMapper iMapper = ServiceConfigAutomapper.configLeer.CreateMapper();
 
             listaPolizasDtos = iMapper.Map<List<PolizasDto>>(listaClientesRepositoryEntry);
             return listaPolizasDtos;
         }
 
         public PolizasDto GetById(int Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int Remove(int Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public PolizasDto Update(PolizasDto model)
         {
             throw new NotImplementedException();
         }

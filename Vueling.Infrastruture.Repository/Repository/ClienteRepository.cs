@@ -25,21 +25,12 @@ namespace Vueling.Infrastruture.Repository.Repository
         {
             this.db = vuelingEntities;
         }
-        static MapperConfiguration configEscribir;
-
-        static MapperConfiguration configLeer;
-        static ClienteRepository()
-        {
-            configEscribir = new MapperConfiguration(cfg => cfg.CreateMap<Clientes, ClientesEntity>()); ;
-
-            configLeer = new MapperConfiguration(cfg => cfg.CreateMap<Clientes, ClientesEntity>()
-            .ForMember(dest => dest.id, sou => sou.Ignore())
-            .ForMember(dest => dest.role, sou => sou.Ignore()));
-        }
+        
         public ClientesEntity Add(ClientesEntity model)
         {
             Clientes cliente = null;
-            IMapper iMapper = configEscribir.CreateMapper();
+            IMapper iMapper = RepositoryConfigAutomapper.configEscribir.CreateMapper();
+
             cliente = iMapper.Map<ClientesEntity, Clientes>(model);
 
             try
@@ -50,26 +41,32 @@ namespace Vueling.Infrastruture.Repository.Repository
             }
             catch (DbUpdateConcurrencyException ex)
             {
+                VuelingLogger.Logger(ex);
                 throw new VuelingException(Resources.DbUpdateConcurrencyException, ex);
             }
             catch (DbUpdateException ex)
             {
+                VuelingLogger.Logger(ex);
                 throw new VuelingException(Resources.DbUpdateException, ex);
             }
             catch (DbEntityValidationException ex)
             {
+                VuelingLogger.Logger(ex);
                 throw new VuelingException(Resources.DbEntityValidationException, ex);
             }
             catch (NotSupportedException ex)
             {
+                VuelingLogger.Logger(ex);
                 throw new VuelingException(Resources.NotSupportedException, ex);
             }
             catch (ObjectDisposedException ex)
             {
+                VuelingLogger.Logger(ex);
                 throw new VuelingException(Resources.ObjectDisposedException, ex);
             }
             catch (InvalidOperationException ex)
             {
+                VuelingLogger.Logger(ex);
                 throw new VuelingException(Resources.InvalidOperationException, ex);
             }
             return model;
@@ -80,18 +77,9 @@ namespace Vueling.Infrastruture.Repository.Repository
             List<ClientesEntity> clienteEntity;
             IQueryable<Clientes> listaClientes;
 
-            try
-            {
                 listaClientes = db.Clientes;
-            }
-            catch (Exception ex)
 
-            {
-                VuelingLogger.Logger(ex);
-                throw ex;
-            }
-
-            IMapper iMapper = configLeer.CreateMapper();
+            IMapper iMapper = RepositoryConfigAutomapper.configLeer.CreateMapper();
 
             clienteEntity = iMapper.Map<List<ClientesEntity>>(listaClientes);
 
@@ -103,19 +91,12 @@ namespace Vueling.Infrastruture.Repository.Repository
             ClientesEntity clienteEntity;
             Clientes cliente;
 
-            IMapper iMapper = configLeer.CreateMapper();
+            IMapper iMapper = RepositoryConfigAutomapper.configLeer.CreateMapper();
+            
 
-
-            try
-            {
                 cliente = db.Clientes.Find(Id);
 
-            }
-            catch (Exception ex)
-            {
 
-                throw ex;
-            }
             clienteEntity = iMapper.Map<ClientesEntity>(cliente);
             return clienteEntity;
         }
@@ -124,20 +105,13 @@ namespace Vueling.Infrastruture.Repository.Repository
             List<ClientesEntity> clienteEntity;
             IQueryable<Clientes> cliente;
 
-            IMapper iMapper = configLeer.CreateMapper();
+            IMapper iMapper = RepositoryConfigAutomapper.configLeer.CreateMapper();
 
 
-            try
-            {
                 cliente = db.Clientes
                         .Where(b => b.name == name);
 
-            }
-            catch (Exception ex)
-            {
 
-                throw ex;
-            }
             clienteEntity = iMapper.Map<List<ClientesEntity>>(cliente);
             return clienteEntity;
         }

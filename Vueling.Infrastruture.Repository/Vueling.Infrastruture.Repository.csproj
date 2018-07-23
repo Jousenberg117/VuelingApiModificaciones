@@ -80,6 +80,7 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\ConfigAutomapper.cs" />
     <Compile Include="Repository\PolizasRepository.cs" />
     <Compile Include="Repository\ClienteRepository.cs" />
     <Compile Include="Resources.Designer.cs">

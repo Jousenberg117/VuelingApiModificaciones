@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\ConfigAutomapper.cs" />
     <Compile Include="Service\PolizasService.cs" />
     <Compile Include="Service\ClientesService.cs" />
     <Compile Include="Service\HttpPolizasService.cs" />

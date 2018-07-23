@@ -31,15 +31,7 @@ namespace Vueling.Facade.Api.Controllers
         // GET: api/PolizasApi
         public IEnumerable<PolizasDto> Get()
         {
-            try
-            {
                 return polizasService.GetAll();
-            }
-            catch (VuelingException ex)
-            {
-
-                throw;
-            }
         }
 
         // GET: api/PolizasApi/5
@@ -65,27 +57,10 @@ namespace Vueling.Facade.Api.Controllers
             }
             catch (VuelingException ex)
             {
-                throw ex;
+                throw new HttpResponseException(HttpStatusCode.NotFound);
             }
             return CreatedAtRoute("DefaultApi",
                 new { id = polizasDtoInsert.id }, polizasDtoInsert);
-        }
-
-            // PUT: api/PolizasApi/5
-            public IHttpActionResult Put(int id, PolizasDto model)
-            {
-                if (!ModelState.IsValid)
-                {
-                    return BadRequest(ModelState);
-                }
-                polizasService.Update(model);
-                return StatusCode(HttpStatusCode.NoContent);
-            }
-
-        // DELETE: api/PolizasApi/5
-        public IHttpActionResult Delete(int id)
-        {
-            return Ok(polizasService.Remove(id));
         }
     }
 }

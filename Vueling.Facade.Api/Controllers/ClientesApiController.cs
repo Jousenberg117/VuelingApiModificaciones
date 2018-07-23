@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 using System.Web.Http.Description;
 using Vueling.Alplication.Services.Service;
@@ -34,15 +35,7 @@ namespace Vueling.Facade.Api.Controllers
         // GET: api/ClientesApi
         public IEnumerable<ClientesDto> Get()
         {
-            try
-            {
                 return clientesService.GetAll();
-            }
-            catch (VuelingException ex)
-            {
-
-                throw ex;
-            }
         }
 
         [HttpGet]
@@ -50,14 +43,7 @@ namespace Vueling.Facade.Api.Controllers
         // GET: api/ClientesApi/5
         public ClientesDto Get(string id)
         {
-            try
-            {
                 return clientesService.GetById(id);
-            }
-            catch (VuelingException ex)
-            {
-                throw ex;
-            }
         }
 
         [HttpGet]
@@ -85,7 +71,7 @@ namespace Vueling.Facade.Api.Controllers
             catch (VuelingException ex)
             {
                 VuelingLogger.Logger(ex);
-                throw ex;
+                throw new HttpResponseException(HttpStatusCode.NotFound);
             }
             return CreatedAtRoute("DefaultApi",
                 new { id = clienteDtoInsert.id }, clienteDtoInsert);
