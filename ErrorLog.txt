@@ -1,0 +1,61 @@
+2018-07-22 11:26:54.339 +02:00 [ERR] An error occurred while updating the entries. See the inner exception for details.Infracción de la restricción PRIMARY KEY 'PK__Clientes__3213E83F3F9BCDC2'. No se puede insertar una clave duplicada en el objeto 'dbo.Clientes'. El valor de la clave duplicada es (a0ece5db-cd14-4f21-812f-966633e7be86).
+Se terminó la instrucción.   en System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.<Update>b__2(UpdateTranslator ut)
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update[T](T noChangesResult, Func`2 updateFunction)
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update()
+   en System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStore>b__35()
+   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   en System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass2a.<SaveChangesInternal>b__27()
+   en System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+2018-07-22 11:29:19.371 +02:00 [ERR] An error occurred while updating the entries. See the inner exception for details.An error occurred while updating the entries. See the inner exception for details.   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+   en System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   en System.Data.Entity.DbContext.SaveChanges()
+   en Vueling.Infrastruture.Repository.Repository.ClienteRepository.Add(ClientesEntity model) en C:\Users\jhoubbertM\source\repos\VuelingApiDDD\Vueling.Infrastruture.Repository\Repository\ClienteRepository.cs:línea 39
+2018-07-22 11:33:04.314 +02:00 [ERR] An error occurred while updating the entries. See the inner exception for details.An error occurred while updating the entries. See the inner exception for details.   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+   en System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   en System.Data.Entity.DbContext.SaveChanges()
+   en Vueling.Infrastruture.Repository.Repository.ClienteRepository.Add(ClientesEntity model) en C:\Users\jhoubbertM\source\repos\VuelingApiDDD\Vueling.Infrastruture.Repository\Repository\ClienteRepository.cs:línea 39
+2018-07-22 11:34:48.790 +02:00 [ERR] An error occurred while updating the entries. See the inner exception for details.An error occurred while updating the entries. See the inner exception for details.   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+   en System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   en System.Data.Entity.DbContext.SaveChanges()
+   en Vueling.Infrastruture.Repository.Repository.ClienteRepository.Add(ClientesEntity model) en C:\Users\jhoubbertM\source\repos\VuelingApiDDD\Vueling.Infrastruture.Repository\Repository\ClienteRepository.cs:línea 39
+2018-07-22 11:35:41.106 +02:00 [ERR] Error al Grabar datosAn error occurred while updating the entries. See the inner exception for details.   en Vueling.Alplication.Services.Service.ClientesService.Add(ClientesDto model) en C:\Users\jhoubbertM\source\repos\VuelingApiDDD\Vueling.Alplication.Services\Service\ClientesService.cs:línea 55
+   en Vueling.Facade.Api.Controllers.ClientesApiController.Post(ClientesDto model) en C:\Users\jhoubbertM\source\repos\VuelingApiDDD\Vueling.Facade.Api\Controllers\ClientesApiController.cs:línea 64
+2018-07-22 11:38:03.230 +02:00 [ERR] Error al Grabar datosAn error occurred while updating the entries. See the inner exception for details.   en Vueling.Alplication.Services.Service.ClientesService.Add(ClientesDto model) en C:\Users\jhoubbertM\source\repos\VuelingApiDDD\Vueling.Alplication.Services\Service\ClientesService.cs:línea 55
+   en Vueling.Facade.Api.Controllers.ClientesApiController.Post(ClientesDto model) en C:\Users\jhoubbertM\source\repos\VuelingApiDDD\Vueling.Facade.Api\Controllers\ClientesApiController.cs:línea 64
+2018-07-22 11:40:35.496 +02:00 [ERR] An error occurred while updating the entries. See the inner exception for details.An error occurred while updating the entries. See the inner exception for details.   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+   en System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   en System.Data.Entity.DbContext.SaveChanges()
+   en Vueling.Infrastruture.Repository.Repository.ClienteRepository.Add(ClientesEntity model) en C:\Users\jhoubbertM\source\repos\VuelingApiDDD\Vueling.Infrastruture.Repository\Repository\ClienteRepository.cs:línea 39
+2018-07-22 11:43:32.180 +02:00 [ERR] An error occurred while updating the entries. See the inner exception for details.An error occurred while updating the entries. See the inner exception for details.   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+   en System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   en System.Data.Entity.DbContext.SaveChanges()
+   en Vueling.Infrastruture.Repository.Repository.ClienteRepository.Add(ClientesEntity model) en C:\Users\jhoubbertM\source\repos\VuelingApiDDD\Vueling.Infrastruture.Repository\Repository\ClienteRepository.cs:línea 39
+2018-07-22 11:44:39.213 +02:00 [ERR] An error occurred while updating the entries. See the inner exception for details.Infracción de la restricción PRIMARY KEY 'PK__Clientes__3213E83F3F9BCDC2'. No se puede insertar una clave duplicada en el objeto 'dbo.Clientes'. El valor de la clave duplicada es (a0ece5db-cd14-4f21-812f-966633e7be86).
+Se terminó la instrucción.   en System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.<Update>b__2(UpdateTranslator ut)
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update[T](T noChangesResult, Func`2 updateFunction)
+   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update()
+   en System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStore>b__35()
+   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   en System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass2a.<SaveChangesInternal>b__27()
+   en System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   en System.Data.Entity.Core.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+2018-07-22 11:46:18.990 +02:00 [ERR] An error occurred while updating the entries. See the inner exception for details.An error occurred while updating the entries. See the inner exception for details.   en System.Data.Entity.Internal.InternalContext.SaveChanges()
+   en System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   en System.Data.Entity.DbContext.SaveChanges()
+   en Vueling.Infrastruture.Repository.Repository.ClienteRepository.Add(ClientesEntity model) en C:\Users\jhoubbertM\source\repos\VuelingApiDDD\Vueling.Infrastruture.Repository\Repository\ClienteRepository.cs:línea 39
+2018-07-22 11:47:30.118 +02:00 [ERR] Error al Grabar datosAn error occurred while updating the entries. See the inner exception for details.   en Vueling.Alplication.Services.Service.ClientesService.Add(ClientesDto model) en C:\Users\jhoubbertM\source\repos\VuelingApiDDD\Vueling.Alplication.Services\Service\ClientesService.cs:línea 55
+   en Vueling.Facade.Api.Controllers.ClientesApiController.Post(ClientesDto model) en C:\Users\jhoubbertM\source\repos\VuelingApiDDD\Vueling.Facade.Api\Controllers\ClientesApiController.cs:línea 64
+2018-07-22 11:53:17.074 +02:00 [ERR] An error occurred while updating the entries. See the inner exception for details.An error occurred while updating the entries. See the inner exception for details.
+2018-07-22 11:53:17.081 +02:00 [ERR] Error al Grabar datos An error occurred while updating the entries. See the inner exception for details.   en Vueling.Alplication.Services.Service.ClientesService.Add(ClientesDto model) en C:\Users\jhoubbertM\source\repos\VuelingApiDDD\Vueling.Alplication.Services\Service\ClientesService.cs:línea 55
+   en Vueling.Facade.Api.Controllers.ClientesApiController.Post(ClientesDto model) en C:\Users\jhoubbertM\source\repos\VuelingApiDDD\Vueling.Facade.Api\Controllers\ClientesApiController.cs:línea 64
+2018-07-22 14:43:38.426 +02:00 [ERR] Error al Grabar datos An error occurred while updating the entries. See the inner exception for details.   en Vueling.Alplication.Services.Service.ClientesService.Add(ClientesDto model) en C:\Users\jhoubbertM\source\repos\VuelingApiDDD\Vueling.Alplication.Services\Service\ClientesService.cs:línea 55
+   en Vueling.Facade.Api.Controllers.ClientesApiController.Post(ClientesDto model) en C:\Users\jhoubbertM\source\repos\VuelingApiDDD\Vueling.Facade.Api\Controllers\ClientesApiController.cs:línea 67

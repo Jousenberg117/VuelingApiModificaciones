@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "dc4fce9e-facf-46ff-b137-c175722efbd4",
+		"name": "Vueling",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:51033/api/login/echoping",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "51033",
+					"path": [
+						"api",
+						"login",
+						"echoping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EchoUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:51033/api/login/echouser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "51033",
+					"path": [
+						"api",
+						"login",
+						"echouser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"role\": \"admin\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:51033/api/login/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "51033",
+					"path": [
+						"api",
+						"login",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get By Id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNTMyMjg3MTMyLCJleHAiOjE1MzIyODg5MzIsImlhdCI6MTUzMjI4NzEzMiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MTAzMy8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUxMDMzLyJ9.u6CnUF0cNxwIL3yKrWxaEfrGIDpFX4MdYz6htrvu_3U"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:51033/api/ClientesApi?id=e8863129-8ac4-4522-9e0e-24b18d9f6b45",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "51033",
+					"path": [
+						"api",
+						"ClientesApi"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "e8863129-8ac4-4522-9e0e-24b18d9f6b45"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{41C0D81C-18C1-412A-B723-17DA7A2559D3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Vueling.Alplication.Services</RootNamespace>
+    <AssemblyName>Vueling.Alplication.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.2.7.1\lib\net46\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\PolizasService.cs" />
+    <Compile Include="Service\ClientesService.cs" />
+    <Compile Include="Service\HttpPolizasService.cs" />
+    <Compile Include="Service\HttpClientesService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Vueling.Aplication.Dto\Vueling.Aplication.Dto.csproj">
+      <Project>{2d4db40f-a3b4-4f21-8e40-7e90a3dd56b1}</Project>
+      <Name>Vueling.Aplication.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vueling.Aplication.Services.Contracts\Vueling.Aplication.Services.Contracts.csproj">
+      <Project>{b1603065-6eb5-473d-a253-d986c8969465}</Project>
+      <Name>Vueling.Aplication.Services.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vueling.Common.Layer\Vueling.Common.Layer.csproj">
+      <Project>{9b0eb04a-842f-4a0c-98a7-6010fa485d96}</Project>
+      <Name>Vueling.Common.Layer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vueling.Domain.Models\Vueling.Domain.Models.csproj">
+      <Project>{01c0717f-0662-4d0d-8b6e-12d7e9678426}</Project>
+      <Name>Vueling.Domain.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vueling.Infrastructure.Repository.Contracts\Vueling.Infrastructure.Repository.Contracts.csproj">
+      <Project>{69e3e9c9-0d68-46c4-bab3-4dd75b7116c7}</Project>
+      <Name>Vueling.Infrastructure.Repository.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vueling.Infrastruture.Repository\Vueling.Infrastruture.Repository.csproj">
+      <Project>{21e52dc2-5031-4c56-bd6e-29466747caac}</Project>
+      <Name>Vueling.Infrastruture.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

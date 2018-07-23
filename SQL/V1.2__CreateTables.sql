@@ -1,0 +1,29 @@
+﻿USE Vueling
+GO
+--N CONVIERTE EL TEXTO EN NVARCHAR
+--U USER DESINED TABLE
+IF OBJECT_ID(N'Vueling.dbo.Clientes', N'U') IS NULL
+BEGIN
+-- Creamos la tabla
+CREATE TABLE dbo.Clientes
+(
+id [NVARCHAR](40) NOT NULL PRIMARY KEY,
+name [NVARCHAR](50) NOT NULL,
+email [NVARCHAR](50) NOT NULL,
+role [NVARCHAR](10) NOT NULL,
+)
+END
+USE Vueling
+GO
+IF OBJECT_ID(N'Vueling.dbo.Polizas', N'U') IS NULL
+BEGIN
+CREATE TABLE dbo.Polizas
+(
+id [NVARCHAR](40) NOT NULL PRIMARY KEY,
+amountInsured [NUMERIC](10,3) NOT NULL,
+email [NVARCHAR](50) NOT NULL,
+inceptionDate [DATETIME] NOT NULL,
+installmentPayment [BIT] NOT NULL,
+clientId [NVARCHAR](40) NOT NULL,
+);
+END
