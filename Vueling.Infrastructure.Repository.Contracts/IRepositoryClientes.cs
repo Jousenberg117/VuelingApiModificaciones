@@ -12,6 +12,7 @@ namespace Vueling.Infrastructure.Repository.Contracts
         List<T> GetAll();
         T GetById(Guid Id);
         List<T> GetByName(string name);
+        T GetByEmail(string email);
 
     }
 }

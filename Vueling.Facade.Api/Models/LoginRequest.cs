@@ -7,6 +7,6 @@ namespace Vueling.Facade.Api.Models
 {
     public class LoginRequest
     {
-        public string role { get; set; }
+        public string email { get; set; }
     }
 }

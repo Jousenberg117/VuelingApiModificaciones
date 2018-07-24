@@ -31,7 +31,7 @@ namespace Vueling.Facade.Api.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "admin, user")]
+        [Authorize(Roles = "admin")]
         // GET: api/ClientesApi
         public IEnumerable<ClientesDto> Get()
         {

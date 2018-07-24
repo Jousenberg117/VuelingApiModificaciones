@@ -12,5 +12,6 @@ namespace Vueling.Aplication.Services.Contracts
         List<T> GetAll();
         T GetById(Guid Id);
         List<T> GetByName(string name);
+        T GetByEmail(string email);
     }
 }

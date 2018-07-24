@@ -115,5 +115,20 @@ namespace Vueling.Infrastruture.Repository.Repository
             clienteEntity = iMapper.Map<List<ClientesEntity>>(cliente);
             return clienteEntity;
         }
+        public ClientesEntity GetByEmail(string email)
+        {
+            ClientesEntity clienteEntity;
+            Clientes cliente;
+
+            IMapper iMapper = RepositoryConfigAutomapper.configLeer.CreateMapper();
+
+
+            cliente = db.Clientes
+                    .FirstOrDefault(b => b.email == email);
+
+
+            clienteEntity = iMapper.Map<ClientesEntity>(cliente);
+            return clienteEntity;
+        }
     }
 }

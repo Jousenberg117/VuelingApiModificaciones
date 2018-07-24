@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Web.Http;
+using Vueling.Alplication.Services.Service;
 using Vueling.Facade.Api.Models;
 
 namespace Vueling.Facade.Api.Controllers
@@ -32,14 +33,15 @@ namespace Vueling.Facade.Api.Controllers
         [Route("authenticate")]
         public IHttpActionResult Authenticate(LoginRequest login)
         {
+            ClientesService service = new ClientesService();
             if (login == null)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
 
             //TODO: Validate credentials Correctly, this code is only for demo !!
-            bool isCredentialValid = (login.role == "admin" || login.role == "user");
+            bool isCredentialValid = (login.email == service.GetByEmail(login.email).email);
             if (isCredentialValid)
             {
-                var token = TokenGenerator.GenerateTokenJwt(login.role);
+                var token = TokenGenerator.GenerateTokenJwt(login.email);
                 return Ok(token);
             }
             else

@@ -18,7 +18,7 @@ namespace Vueling.Common.Layer
         {
             configEscribir = new MapperConfiguration(cfg => cfg.CreateMap<ClientesEntity, Clientes>()); ;
 
-            configLeer = new MapperConfiguration(cfg => cfg.CreateMap<Clientes, ClientesEntity>()
+            configLeer = new MapperConfiguration(cfg => cfg.CreateMap<ClientesEntity, Clientes>()
             .ForMember(dest => dest.id, sou => sou.UseValue("Privado")));
         }
     }

@@ -5,13 +5,15 @@ using System.Configuration;
 using System.Linq;
 using System.Security.Claims;
 using System.Web;
+using Vueling.Alplication.Services.Service;
 
 namespace Vueling.Facade.Api.Controllers
 {
     internal static class TokenGenerator
     {
-        public static string GenerateTokenJwt(string username)
+        public static string GenerateTokenJwt(string email)
         {
+            ClientesService clientesService = new ClientesService();
             // appsetting for Token JWT
             var secretKey = ConfigurationManager.AppSettings["JWT_SECRET_KEY"];
             var audienceToken = ConfigurationManager.AppSettings["JWT_AUDIENCE_TOKEN"];
@@ -22,7 +24,10 @@ namespace Vueling.Facade.Api.Controllers
             var signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature);
 
             // create a claimsIdentity
-            ClaimsIdentity claimsIdentity = new ClaimsIdentity(new[] { new Claim(ClaimTypes.Name, username) });
+            ClaimsIdentity claimsIdentity = new ClaimsIdentity(new[] 
+            { new Claim(ClaimTypes.Name, email),
+              new Claim(ClaimTypes.Role, clientesService.GetByEmail(email).role) });
+            
 
             // create token to the user
             var tokenHandler = new System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler();

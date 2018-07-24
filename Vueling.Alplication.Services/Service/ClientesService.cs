@@ -74,5 +74,14 @@ namespace Vueling.Alplication.Services.Service
             cliente = iMapper.Map<List<ClientesDto>>(clientesEntityEntry);
             return cliente;
         }
+        public ClientesDto GetByEmail(string email)
+        {
+            ClientesDto cliente;
+            ClientesEntity clientesEntityEntry;
+            clientesEntityEntry = clienteRepository.GetByEmail(email);
+            IMapper iMapper = ServiceConfigAutomapper.configLeer.CreateMapper();
+            cliente = iMapper.Map<ClientesDto>(clientesEntityEntry);
+            return cliente;
+        }
     }
 }
