@@ -35,7 +35,7 @@ namespace Vueling.Facade.Api.Controllers
         }
 
         // GET: api/PolizasApi/5
-        public PolizasDto Get(int id)
+        public PolizasDto Get(Guid id)
         {
             return polizasService.GetById(id);
         }

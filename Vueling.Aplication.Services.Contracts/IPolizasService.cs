@@ -9,9 +9,7 @@ namespace Vueling.Aplication.Services.Contracts
     public interface IPolizasService<T>
     {
         T Add(T model);
-        T Update(T model);
         List<T> GetAll();
-        T GetById(int Id);
-        int Remove(int Id);
+        T GetById(Guid Id);
     }
 }

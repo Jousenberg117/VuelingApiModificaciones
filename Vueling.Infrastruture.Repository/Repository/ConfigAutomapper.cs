@@ -16,7 +16,7 @@ namespace Vueling.Common.Layer
         public static MapperConfiguration configLeer;
         static RepositoryConfigAutomapper()
         {
-            configEscribir = new MapperConfiguration(cfg => cfg.CreateMap<Clientes, ClientesEntity>()); ;
+            configEscribir = new MapperConfiguration(cfg => cfg.CreateMap<ClientesEntity, Clientes>()); ;
 
             configLeer = new MapperConfiguration(cfg => cfg.CreateMap<Clientes, ClientesEntity>()
             .ForMember(dest => dest.id, sou => sou.UseValue("Privado")));

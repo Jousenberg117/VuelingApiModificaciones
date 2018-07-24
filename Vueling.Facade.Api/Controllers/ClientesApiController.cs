@@ -31,7 +31,7 @@ namespace Vueling.Facade.Api.Controllers
         }
 
         [HttpGet]
-        [Authorize(Users = "admin, user")]
+        [Authorize(Roles = "admin, user")]
         // GET: api/ClientesApi
         public IEnumerable<ClientesDto> Get()
         {
@@ -39,15 +39,15 @@ namespace Vueling.Facade.Api.Controllers
         }
 
         [HttpGet]
-        [Authorize(Users = "admin, user")]
+        [Authorize(Roles = "admin, user")]
         // GET: api/ClientesApi/5
-        public ClientesDto Get(string id)
+        public ClientesDto Get(Guid id)
         {
                 return clientesService.GetById(id);
         }
 
         [HttpGet]
-        [Authorize(Users = "admin, user")]
+        [Authorize(Roles = "admin, user")]
         public List<ClientesDto> GetByName(string name)
         {
             return clientesService.GetByName(name);

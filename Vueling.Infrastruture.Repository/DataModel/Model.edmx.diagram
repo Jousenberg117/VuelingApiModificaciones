@@ -4,9 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1c8ff02c98c5449594728c59d0d227e9" Name="Diagram1">
-        <EntityTypeShape EntityType="VuelingModel.Clientes" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="VuelingModel.Polizas" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="bdfd614bd5944c21a7472209ea5f8574" Name="Diagram1">
+        <EntityTypeShape EntityType="VuelingModel.Clientes" Width="1.875" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="VuelingModel.Polizas" Width="2.125" PointX="3.625" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="VuelingModel.FK__Polizas__clientI__02084FDA" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

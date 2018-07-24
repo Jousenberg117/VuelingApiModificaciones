@@ -86,7 +86,7 @@ namespace Vueling.Infrastruture.Repository.Repository
             return clienteEntity;
         }
 
-        public ClientesEntity GetById(string Id)
+        public ClientesEntity GetById(Guid Id)
         {
             ClientesEntity clienteEntity;
             Clientes cliente;

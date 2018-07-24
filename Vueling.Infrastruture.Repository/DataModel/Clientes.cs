@@ -14,9 +14,18 @@ namespace Vueling.Infrastruture.Repository.DataModel
     
     public partial class Clientes
     {
-        public string id { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Clientes()
+        {
+            this.Polizas = new HashSet<Polizas>();
+        }
+    
+        public System.Guid id { get; set; }
         public string name { get; set; }
         public string email { get; set; }
         public string role { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Polizas> Polizas { get; set; }
     }
 }

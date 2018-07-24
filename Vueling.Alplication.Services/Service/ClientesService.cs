@@ -56,7 +56,7 @@ namespace Vueling.Alplication.Services.Service
             return listaClientesDtos;
         }
 
-        public ClientesDto GetById(string Id)
+        public ClientesDto GetById(Guid Id)
         {
             ClientesDto cliente;
             ClientesEntity clientesEntityEntry;

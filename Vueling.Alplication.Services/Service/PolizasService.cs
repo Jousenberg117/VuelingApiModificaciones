@@ -56,7 +56,7 @@ namespace Vueling.Alplication.Services.Service
             return listaPolizasDtos;
         }
 
-        public PolizasDto GetById(int Id)
+        public PolizasDto GetById(Guid Id)
         {
             throw new NotImplementedException();
         }

@@ -10,7 +10,7 @@ namespace Vueling.Aplication.Services.Contracts
     {
         T Add(T model);
         List<T> GetAll();
-        T GetById(string Id);
+        T GetById(Guid Id);
         List<T> GetByName(string name);
     }
 }

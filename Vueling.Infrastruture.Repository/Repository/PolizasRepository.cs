@@ -85,7 +85,7 @@ namespace Vueling.Infrastruture.Repository.Repository
             return polizasEntity;
         }
 
-        public PolizasEntity GetById(int Id)
+        public PolizasEntity GetById(Guid Id)
         {
             throw new NotImplementedException();
         }
